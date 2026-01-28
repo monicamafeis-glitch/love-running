@@ -29,6 +29,7 @@ header {
 header a {
     text-decoration: none;
     color: inherit;
+} /* Closed correctly */
 
 h1 {
     font-family: 'Oswald', sans-serif;
@@ -40,19 +41,33 @@ h1 {
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
-    list-style-type: none;
+    list-style-type: none; /* This removes the bullets */
 } 
+
 #menu > li {
     margin-bottom: 1em;
 }
+
 .active {
     border-bottom: 1px solid #252525;
+}
+
+/*Navbar styles with dropdown menu*/
+nav {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
 }
 
 /* Main content */
 main {
     background-color: lightblue;
     flex: 1 0 auto;
+    margin-top: 150px; /* Adjust this number until you see the blue */
 }
 
 /* Footer */
