@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Asterisk wildcard selector */
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-/* General styles */  
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: #3a3a3a; /* Moved inside body */
-    font-family: 'Lato', sans-serif; /* Moved inside body */
+    /* Generic project styles */
+    color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
 }
 
-/* Header */ 
+/* Header */
 header {
     background-color: #ffffff;
     padding: 0 1rem;
@@ -24,12 +26,15 @@ header {
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 header a {
     text-decoration: none;
     color: inherit;
-} /* Closed correctly */
+}
 
 h1 {
     font-family: 'Oswald', sans-serif;
@@ -41,18 +46,18 @@ h1 {
 #menu {
     font-size: 110%;
     letter-spacing: 4px;
-    list-style-type: none; /* This removes the bullets */
-} 
+    list-style-type: none;
+}
 
 #menu > li {
     margin-bottom: 1em;
 }
 
 .active {
-    border-bottom: 1px solid #252525;
+    border-bottom: 1px solid #3a3a3a;
 }
 
-/*Navbar styles with dropdown menu*/
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
@@ -61,17 +66,74 @@ nav {
     padding: 0 1rem;
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
+    top: 100%;
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
 }
 
 /* Main content */
 main {
     background-color: lightblue;
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
-    margin-top: 150px; /* Adjust this number until you see the blue */
+    margin-top: 47px;
 }
 
 /* Footer */
 footer {
     background-color: orange;
-    padding: 10px;
+}
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    /* Main content */
+    main {
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
+    }
 }
