@@ -204,6 +204,13 @@ main {
     padding: 5%;
     color: #3a3a3a;
 }
+/* Media query: tablets and larger (570px and up) */
+@media screen and (min-width: 570px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
@@ -263,12 +270,22 @@ main {
         align-self: flex-end;
     }
 
+    /*Gallery page */
+    #photos {
+        column-count: 3;
+    }
+
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
+
+    /*Gallery page */
+    #photos {       
+        column-count: 4;
+    }
 
 @media screen and (min-width: 1200px) {    
     /* Reasons section */
